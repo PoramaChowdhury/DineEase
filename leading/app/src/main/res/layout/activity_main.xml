@@ -78,6 +78,7 @@
             android:backgroundTint="#55AD9B"
             android:text="Sign Up"
             android:textSize="15sp"
+
             />
     </LinearLayout>
 
