@@ -1,37 +1,27 @@
 package com.example.leading;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.cardview.widget.CardView;
 
-public class SplashScreen extends AppCompatActivity {
+public class Cardview extends AppCompatActivity {
+    CardView card;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.activity_card_view);
         /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });*/
+        card = findViewById(R.id.card);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent main = new Intent(SplashScreen.this, MainActivity.class);
-                startActivity(main);
-                finish();
-            }
-        }, 1000);
+       // card.setRadius(5.0f);
 
-
-   }
+    }
 }
