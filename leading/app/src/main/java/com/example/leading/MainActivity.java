@@ -1,66 +1,52 @@
 package com.example.leading;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import android.widget.Toast;
+import androidx.room.Room;
 
 public class MainActivity extends AppCompatActivity {
+
+    private EditText etUsername, etPassword;
+    private Button btnLogin;
+    private AppDatabase db;
+    private UserDao userDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });*/
 
-        ImageView photo;
-        TextView welcome,wish,forget_pass;
-        EditText user,password;
-        Button button_login,button_signup;
+        etUsername = findViewById(R.id.etUsername);
+        etPassword = findViewById(R.id.etPassword);
+        btnLogin = findViewById(R.id.btnLogin);
 
-        photo =  findViewById(R.id.photo);
-        user = findViewById(R.id.user_name);
-        password = findViewById(R.id.password);
-        button_login = findViewById(R.id.button_logIn);
-        button_signup = findViewById(R.id.button_signUp);
+        // Initialize Room Database
+        db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "database-name").allowMainThreadQueries().build();
+        userDao = db.userDao();
 
-       /* button_login.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-              String userName = user.getText().toString();
-              String Password = password.getText().toString();
+            public void onClick(View view) {
+                String username = etUsername.getText().toString();
+                String password = etPassword.getText().toString();
+
+                // Validate user credentials
+                User user = userDao.findByUsername(username);
+                if (user != null && user.getPassword().equals(password)) {
+                    // Successful login
+                    Intent intent = new Intent(MainActivity.this, Menu.class);
+                    startActivity(intent);
+                } else {
+                    // Invalid credentials
+                    Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+                }
             }
-        });*/
-
-
-
-        button_signup.setOnClickListener(new View.OnClickListener(){
-         @Override
-         public void onClick(View v) {
-           Intent register;
-
-             register = new Intent(MainActivity.this,Register.class);
-             startActivity(register);
-         }
         });
-
-
-
-
-
     }
 }
