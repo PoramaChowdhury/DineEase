@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">leading</string>
+    <string name="welcome">HelloFoodies!</string>
+    <string name="wish"> Welcome To \n <i>DineEase</i>\n</string>
+
+
+    <string name="user">User Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm">Confirm Your Password</string>
+
+</resources>
