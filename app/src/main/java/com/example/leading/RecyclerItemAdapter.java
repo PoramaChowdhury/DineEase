@@ -40,7 +40,6 @@ public class RecyclerItemAdapter extends RecyclerView.Adapter<RecyclerItemAdapte
         holder.itemDescription.setText(itemList.get(position).description);
 
 
-
     }
 
     @Override

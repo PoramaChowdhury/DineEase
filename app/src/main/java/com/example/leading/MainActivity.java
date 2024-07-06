@@ -34,21 +34,25 @@ public class MainActivity extends AppCompatActivity {
 
             if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(MainActivity.this, "fill the data", Toast.LENGTH_SHORT).show();
-            } else {
-                DatabaseHelper dbHelper = new DatabaseHelper(MainActivity.this);
-                boolean result = dbHelper.checkUserName(username, password);
-
-                if (result) {
-                    Toast.makeText(MainActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this,MenuActivity.class);  // Changed to Menu.class
+            }
+            else {
+                if (username.equals("admin") && password.equals("admin")) {
+                    Intent intent = new Intent(MainActivity.this, AdminPage.class);
                     startActivity(intent);
                 }
                 else {
-                    Toast.makeText(MainActivity.this, "Invalid credentials!", Toast.LENGTH_SHORT).show();
-                }
-                }
+                    DatabaseHelper dbHelper = new DatabaseHelper(MainActivity.this);
+                    boolean result = dbHelper.checkUserName(username, password);
 
-
+                    if (result) {
+                        Toast.makeText(MainActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, MenuActivity.class);  // Changed to Menu.class
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(MainActivity.this, "Invalid credentials!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
 
         });
 
