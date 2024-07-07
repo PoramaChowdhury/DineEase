@@ -72,7 +72,7 @@ public class AdminPage extends AppCompatActivity {
         });
 
         btnMenu.setOnClickListener(v -> {
-            Intent intent = new Intent(AdminPage.this, MenuActivity.class);
+            Intent intent = new Intent(AdminPage.this, Item_List.class);
             startActivity(intent);
         });
 

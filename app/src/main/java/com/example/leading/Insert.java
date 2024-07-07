@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,9 +29,9 @@ public class Insert extends AppCompatActivity {
     private static final int REQUEST_IMAGE_PICK = 1;
 
 
-    private TextView item_name;
-    private TextView item_price;
-    private TextView item_description;
+    private EditText item_name;
+    private EditText item_price;
+    private EditText item_description;
     private ImageView image;
     private Button btn_choose_photo;
     private Button btn_insert_item;
@@ -50,17 +51,18 @@ public class Insert extends AppCompatActivity {
             return insets;
         });*/
 
-        TextView Insert, item_name, item_price, item_description;
+       /* TextView Insert, item_name, item_price, item_description;
         ImageView selectedImageView;
-        Button btn_choose_photo, btn_insert_item;
+        Button btn_choose_photo, btn_insert_item;*/
 
-        selectedImageView = findViewById(R.id.image);
-        Insert = findViewById(R.id.insert);
-        item_name = findViewById(R.id.item_name);
-        item_price = findViewById(R.id.item_price);
-        item_description = findViewById(R.id.item_description);
-        btn_insert_item = findViewById(R.id.btnInsert);
-        btn_choose_photo = findViewById(R.id.btn_choose_image);
+
+        image = findViewById(R.id.iv_selected_image);
+
+        item_name = findViewById(R.id.et_item_name);
+        item_price = findViewById(R.id.et_item_price);
+        item_description = findViewById(R.id.et_item_description);
+        btn_insert_item = findViewById(R.id.btn_insert_product);
+        btn_choose_photo = findViewById(R.id.btn_select_image);
 
         databaseHelper = new DatabaseHelper(this);
 
@@ -69,7 +71,7 @@ public class Insert extends AppCompatActivity {
                 Uri imageUri = result.getData().getData();
                 try {
                     Bitmap imageBitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
-                    selectedImageView.setImageBitmap(imageBitmap);
+                    image.setImageBitmap(imageBitmap);
                     imageByteArray = bitmapToByteArray(imageBitmap);
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -97,21 +99,23 @@ public class Insert extends AppCompatActivity {
 
     private void insertItem() {
         String name = item_name.getText().toString();
-        String priceString = item_price.getText().toString();
+        int priceString = Integer.parseInt(item_price.getText().toString());
         String description = item_description.getText().toString();
 
-        if (name.isEmpty() || priceString.isEmpty() || description.isEmpty() || imageByteArray == null) {
+        if (name.isEmpty() ||  imageByteArray == null) {
             Toast.makeText(this, "Fill all fields and select an image", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        try {
+       /* try {
             int price = Integer.parseInt(priceString);
             databaseHelper.insertProduct(name, price, description, imageByteArray);
             Toast.makeText(this, "Product inserted successfully", Toast.LENGTH_SHORT).show();
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Invalid price", Toast.LENGTH_SHORT).show();
-        }
+        }*/
+        databaseHelper.insertProduct(name,priceString, description, imageByteArray);
+        Toast.makeText(this, "Product inserted successfully", Toast.LENGTH_SHORT).show();
     }
 
 

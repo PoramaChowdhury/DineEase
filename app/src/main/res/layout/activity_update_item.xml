@@ -60,7 +60,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Select Image"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#42325E"/>
 
 
     <LinearLayout
@@ -83,7 +84,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/design_default_color_primary"
+            android:backgroundTint="#5F4563"
             android:text="Update" />
     </LinearLayout>
 

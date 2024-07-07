@@ -51,12 +51,16 @@ public class DelateItem extends AppCompatActivity {
 
     private EditText editTextName;
     private TextView textViewItemId;
+
+    private TextView text_view_product_quantity;
+    private TextView text_view_product_price;
     private ImageView imageViewProduct;
-    private Button buttonDelete;
-    private Button buttonImageSelect;
-    private Button buttonSearch;
+    private Button button_Delete;
+    private Button button_Search;
+
 
     private DatabaseHelper databaseHelper;
+    private byte[] bitmapToByteArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,16 +69,16 @@ public class DelateItem extends AppCompatActivity {
 
         editTextName = findViewById(R.id.text_view_product_name);
         textViewItemId = findViewById(R.id.text_view_product_id);
+        text_view_product_quantity = findViewById(R.id.text_view_product_quantity);
+        text_view_product_price = findViewById(R.id.text_view_product_price);
         imageViewProduct = findViewById(R.id.image_view_product);
-        buttonSearch = findViewById(R.id.button_search);
-        buttonDelete = findViewById(R.id.button_delete);
-        buttonImageSelect = findViewById(R.id.button_select_image);
+        button_Search = findViewById(R.id.button_search);
+        button_Delete = findViewById(R.id.button_delete);
 
         databaseHelper = new DatabaseHelper(this);
 
-        buttonSearch.setOnClickListener(view -> searchProduct());
-        buttonDelete.setOnClickListener(view -> deleteProduct());
-        buttonImageSelect.setOnClickListener(view -> selectImage());
+        button_Search.setOnClickListener(view -> searchProduct());
+        button_Delete.setOnClickListener(view -> deleteProduct());
     }
 
     private void searchProduct() {
@@ -91,11 +95,15 @@ public class DelateItem extends AppCompatActivity {
             String description = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_Item_Description));
             byte[] image = cursor.getBlob(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_Item_IMAGE_URI));
 
-            textViewItemId.setText("Item ID: " + itemId);
+            text_view_product_quantity.setText(String.valueOf(text_view_product_quantity));
+            text_view_product_price.setText(String.valueOf(text_view_product_price));
+            textViewItemId.setText(" item ID: " + itemId);
+
 
             if (image != null) {
                 Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
                 imageViewProduct.setImageBitmap(bitmap);
+                bitmapToByteArray= image;
             }
             cursor.close();
         } else {
@@ -104,14 +112,12 @@ public class DelateItem extends AppCompatActivity {
     }
 
     private void deleteProduct() {
-        String itemIdText = textViewItemId.getText().toString();
-        int itemId = Integer.parseInt(itemIdText.replaceAll("\\D+", ""));
+        String itemName = editTextName.getText().toString().trim();
 
-        databaseHelper.deleteProduct(itemId);
-        Toast.makeText(this, "Product deleted successfully", Toast.LENGTH_SHORT).show();
+        databaseHelper.deleteProduct(itemName);
     }
 
-    private void selectImage() {
+    /*private void selectImage() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
@@ -128,5 +134,5 @@ public class DelateItem extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-    }
+    }*/
 }

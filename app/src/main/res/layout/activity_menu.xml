@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="bottom">
 
 
         <LinearLayout
@@ -29,7 +30,8 @@
                 android:id="@+id/button_Beverage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Beverage Hub" />
+                android:text="Beverage Hub"
+                android:backgroundTint="#0A6159"/>
 
         </LinearLayout>
 
@@ -48,7 +50,8 @@
                 android:id="@+id/button_Meat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Meat Item" />
+                android:text="Meat Item"
+                android:backgroundTint="#0A6159"/>
 
         </LinearLayout>
 
@@ -67,7 +70,8 @@
                 android:id="@+id/button_Appetizer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Appetizer" />
+                android:text="Appetizer"
+                android:backgroundTint="#0A6159"/>
 
         </LinearLayout>
 
@@ -86,7 +90,8 @@
                 android:id="@+id/button_Favourite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Owner's Favourite" />
+                android:text="Owner's Favourite"
+                android:backgroundTint="#0A6159"/>
 
         </LinearLayout>
 
