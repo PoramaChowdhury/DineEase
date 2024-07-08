@@ -1,76 +1,3 @@
-<!--
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cardCornerRadius="7dp"
-        app:cardUseCompatPadding="true">
-
-        <LinearLayout
-            android:id="@+id/item_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="11dp"
-            android:gravity="top"
-            android:padding="11dp">
-
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:contentDescription="Image"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img_logo" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="11dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/item_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Name"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/item_price"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Price"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/item_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Description"
-                    android:textSize="16sp" />
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
-</LinearLayout>-->
-
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -95,7 +22,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="11dp"
                 android:gravity="top"
-                android:padding="11dp">
+                android:padding="11dp"
+                android:orientation="horizontal"> <!-- Ensure orientation is set to horizontal -->
 
                 <ImageView
                     android:id="@+id/image"
@@ -103,7 +31,7 @@
                     android:layout_height="100dp"
                     android:contentDescription="Image"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/img_logo" />
+                    android:src="@drawable/img_logo" /> <!-- Ensure this drawable exists -->
 
                 <LinearLayout
                     android:layout_width="match_parent"

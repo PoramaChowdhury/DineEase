@@ -17,14 +17,15 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
-
         <Button
             android:id="@+id/button_manage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#08675E"
-            android:text="ManageActivity" />
+            android:text="manage" />
+
+
 
     </LinearLayout>
 

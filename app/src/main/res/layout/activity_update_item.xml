@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:hint="Item_ID"
         android:padding="8dp"
-        android:background="@android:color/darker_gray"
+        android:background="#95E4DDDD"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:enabled="false" />
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:text="Select Image"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#42325E"/>
+        android:backgroundTint="#4F035C"/>
 
 
     <LinearLayout
@@ -76,7 +76,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/design_default_color_secondary_variant"
+            android:backgroundTint="#054A44"
             android:text="Search" />
 
         <Button

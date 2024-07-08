@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">leading</string>
+    <string name="app_name"><i>DineEase</i></string>
     <string name="welcome">HelloFoodies!</string>
     <string name="wish"> Welcome To \n <i>DineEase</i>\n</string>
 

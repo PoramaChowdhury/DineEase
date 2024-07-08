@@ -1,3 +1,4 @@
+/*
 package com.example.leading;
 
 import android.content.Intent;
@@ -64,4 +65,4 @@ public class MenuActivity extends AppCompatActivity {
         intent.putExtra("CATEGORY", category);
         startActivity(intent);
     }
-}
+}*/

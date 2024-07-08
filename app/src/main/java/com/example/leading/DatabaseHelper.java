@@ -25,16 +25,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_Item_Description = "Description";
     public static final String COL_Item_IMAGE_URI = "itemImageUri";
 
+    //add newly
+    private Context context;
+
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         db.execSQL(" DROP TABLE IF EXISTS " + TABLE_REGISTER);
-        // db.execSQL("DROP TABLE IF EXISTS " + TABLE_Insertion);
+        //addd
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_Insertion);
         onCreate(db);
     }
 
@@ -87,15 +92,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COL_Item_PRICE, price);
         values.put(COL_Item_Description, description);
         values.put(COL_Item_IMAGE_URI, imageByteArray);
-        db.insert(TABLE_Insertion, null, values);
+       // add newly
+        long  result = db.insert(TABLE_Insertion, null, values);
+        if (result == -1) {
+            // Handle insertion failure
+            Toast.makeText(context, "Failed to insert product", Toast.LENGTH_SHORT).show();
+        } else {
+            // Handle successful insertion
+            Toast.makeText(context, "Product inserted successfully", Toast.LENGTH_SHORT).show();
+        }
         db.close();
     }
 
-    public Cursor getAllProducts() {
+    /*public Cursor getAllProducts() {
 
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery(" SELECT * FROM " + TABLE_Insertion, null);
+    }*/
+
+    //added
+    public Cursor getAllProducts() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT Id as _id, ItemName, Price, Description, itemImageUri FROM " + TABLE_Insertion, null);
     }
+
 
     public Cursor getProductByName(String productName) {
         SQLiteDatabase db = this.getReadableDatabase();

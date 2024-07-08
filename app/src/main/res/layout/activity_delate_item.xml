@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="20dp"
     tools:context=".DelateItem">
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Delete Item"
-        android:textSize="18sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_marginBottom="16dp" />
@@ -26,7 +26,6 @@
         android:layout_height="wrap_content"
         android:hint="ItemName"
         android:padding="8dp"
-
         android:textColor="@color/black"
         android:textSize="16sp" />
 
@@ -38,7 +37,7 @@
         android:hint="ItemPrice"
         android:inputType="numberDecimal"
         android:padding="8dp"
-        android:background="@android:color/darker_gray"
+        android:background="#95E4DDDD"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:enabled="false" />
@@ -50,7 +49,7 @@
         android:layout_height="wrap_content"
         android:hint="ItemDescription"
         android:padding="8dp"
-        android:background="@android:color/darker_gray"
+        android:background="#95E4DDDD"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:enabled="false" />
@@ -62,7 +61,7 @@
         android:layout_height="wrap_content"
         android:hint="Item_ID"
         android:padding="8dp"
-        android:background="@android:color/darker_gray"
+        android:background="#95E4DDDD"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:enabled="false" />
@@ -89,7 +88,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/design_default_color_secondary_variant"
+            android:backgroundTint="#754B0E"
             android:text="Search" />
 
 
@@ -98,7 +97,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/design_default_color_error"
+            android:backgroundTint="#591904"
             android:text="Delete" />
     </LinearLayout>
 

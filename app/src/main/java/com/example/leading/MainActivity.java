@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
                     if (result) {
                         Toast.makeText(MainActivity.this, "Hello!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this, Item_List.class);  // Changed to Menu.class
+                        Intent intent = new Intent(MainActivity.this, Item_List.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(MainActivity.this, "Invalid credentials!", Toast.LENGTH_SHORT).show();
