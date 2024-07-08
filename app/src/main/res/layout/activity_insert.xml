@@ -8,64 +8,82 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@drawable/img_back"
     tools:context=".Insert">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
-        android:text="Product Insertion"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_marginBottom="24dp"
+        android:text="Add to Cart"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#290D04"
+        android:letterSpacing="0.1"
+        android:shadowColor="#A3A3A3"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"/>
 
     <EditText
         android:id="@+id/et_item_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Item_Name"
+        android:hint="Item Name"
         android:inputType="text"
         android:minHeight="48dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:background="@drawable/edittext_background"/>
 
     <EditText
         android:id="@+id/et_item_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Item_Price"
+        android:hint="Item Price"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:background="@drawable/edittext_background"/>
 
     <EditText
         android:id="@+id/et_item_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Item_Description"
+        android:hint="Item Description"
         android:inputType="text"
         android:minHeight="48dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:background="@drawable/edittext_background"/>
 
     <ImageView
         android:id="@+id/iv_selected_image"
-        android:layout_width="match_parent"
-        android:layout_height="167dp"
-        android:layout_marginBottom="16dp"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/img_logo" />
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="24dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/baseline_upload_file_24"
+        android:background="#1D98B5B5"/>
 
     <Button
         android:id="@+id/btn_select_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="52dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#154C47"
-        android:text="Select Image" />
+        android:text="Select Image"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btn_insert_product"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#157E74"
-        android:text="Insert Product" />
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#154C47"
+        android:text="Add Item"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
 </LinearLayout>

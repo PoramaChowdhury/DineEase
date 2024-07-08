@@ -1,20 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <shape android:shape="oval">
-            <gradient
-                android:startColor="#FFA726"
-                android:endColor="#684818"
-                android:angle="45" />
-            <corners android:radius="50dp" />
-            <size
-                android:width="180dp"
-                android:height="100dp" />
-            <padding
-                android:left="16dp"
-                android:top="10dp"
-                android:right="16dp"
-                android:bottom="10dp" />
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#106E63"/> <!-- Darker shade for pressed state -->
+            <corners android:radius="8dp"/>
         </shape>
     </item>
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="#106E63"/> <!-- Darker shade for focused state -->
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="#154C47"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+
 </selector>

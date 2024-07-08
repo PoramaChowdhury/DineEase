@@ -6,13 +6,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:gravity="center"
     tools:context=".SplashScreen">
 
    <ImageView
-       android:layout_width="wrap_content"
-       android:layout_height="match_parent"
+       android:layout_width="300dp"
+       android:layout_height="300dp"
        android:src="@drawable/img_logo"/>
 
 

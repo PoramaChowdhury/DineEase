@@ -45,15 +45,8 @@ public class Insert extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_insert);
-        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });*/
 
-       /* TextView Insert, item_name, item_price, item_description;
-        ImageView selectedImageView;
-        Button btn_choose_photo, btn_insert_item;*/
+
 
 
         image = findViewById(R.id.iv_selected_image);
@@ -107,13 +100,7 @@ public class Insert extends AppCompatActivity {
             return;
         }
 
-       /* try {
-            int price = Integer.parseInt(priceString);
-            databaseHelper.insertProduct(name, price, description, imageByteArray);
-            Toast.makeText(this, "Product inserted successfully", Toast.LENGTH_SHORT).show();
-        } catch (NumberFormatException e) {
-            Toast.makeText(this, "Invalid price", Toast.LENGTH_SHORT).show();
-        }*/
+
         databaseHelper.insertProduct(name,priceString, description, imageByteArray);
         Toast.makeText(this, "Product inserted successfully", Toast.LENGTH_SHORT).show();
     }

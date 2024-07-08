@@ -39,7 +39,8 @@
                 android:layout_marginBottom="20dp"
                 android:fontFamily="monospace"
                 android:text="Register"
-                android:textColor="#D11756"
+                android:textColor="#8AC8ED84"
+                android:background="#72000000"
                 android:textSize="30sp" />
 
 
@@ -48,18 +49,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="#430404"
                 android:ems="10"
                 android:hint="@string/user"
                 android:inputType="text"
-                android:textColor="#FF5722" />
+                android:textColorHint="@color/white"
+                android:textColor="#513305" />
 
             <EditText
                 android:id="@+id/mail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="#430404"
                 android:ems="10"
                 android:hint="@string/email"
+                android:textColorHint="@color/white"
                 android:inputType="text"
                 android:textColor="#951616" />
 
@@ -68,9 +73,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="#430404"
                 android:ems="10"
                 android:hint="@string/password"
                 android:inputType="textPassword"
+                android:textColorHint="@color/white"
                 android:textColor="#FFFFFF" />
 
             <EditText
@@ -78,10 +85,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="#430404"
                 android:ems="10"
                 android:hint="@string/confirm"
+                android:textColorHint="@color/white"
                 android:inputType="textPassword"
                 android:textColor="#FFFFFF" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -103,3 +113,5 @@
     </LinearLayout>
 
 </RelativeLayout>
+
+

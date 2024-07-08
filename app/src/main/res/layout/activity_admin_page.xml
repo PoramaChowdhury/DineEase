@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,39 +9,64 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".AdminPage">
+    tools:context=".AdminPage"
+    android:background="@drawable/img_back">
 
     <TextView
         android:id="@+id/hello"
-        android:layout_width="214dp"
-        android:layout_height="55dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Admin!!"
         android:textSize="27sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#FFFDFC"
+        android:letterSpacing="0.1"
+        android:shadowColor="#A3A3A3"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="#6B000000"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
 
-    <Button
-        android:id="@+id/btn_insert_product"
-        android:layout_width="200dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#125A7A"
-        android:text="Insert Product" />
+        <Button
+            android:id="@+id/btn_insert_product"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/custom_button"
+            android:text="Add Item"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btn_item_list"
-        android:layout_width="200dp"
-        android:layout_height="62dp"
-        android:backgroundTint="#125A7A"
-        android:text="ViewMenu" />
+        <Button
+            android:id="@+id/btn_item_list"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/custom_button"
+            android:text="Check Menu"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_updatedlt"
-        android:layout_width="200dp"
-        android:layout_height="62dp"
-        android:backgroundTint="#125A7A"
-        android:text="ManageActivity" />
-
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:background="@drawable/custom_button"
+        android:text="Manage Activity"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>

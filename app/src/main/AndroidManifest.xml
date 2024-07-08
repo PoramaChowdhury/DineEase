@@ -30,9 +30,7 @@
         <activity
             android:name=".Item_List"
             android:exported="false" />
-        <activity
-            android:name=".MenuActivity"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
